@@ -28,6 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Expand the project
 
-1) copy the project: git clone https://github.com/Nikk-V-V/TestMarket.git
-2) install packages: npm i
-3) start project: ng serve 
+1) copy the project: `git clone https://github.com/Nikk-V-V/TestMarket.git`
+2) install packages: `npm i`
+3) start project: `ng serve` or `docker build -t test .`, ` docker run --rm -d -p 80:80 test`
+ 
