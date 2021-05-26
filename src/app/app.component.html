@@ -1,11 +1,20 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>{{title}}</span>
   <nav>
-    <a routerLink="products" mat-button>
+    <a
+      routerLink="products"
+      mat-button
+    >
       Products
     </a>
-    <a routerLink="card" mat-button>
-      <mat-icon>cart</mat-icon> Cart
+    <a
+      [matBadge]="count"
+      [matBadgeHidden]="!count"
+      matBadgeColor="accent"
+      routerLink="basket"
+      mat-button
+    >
+      <mat-icon>shopping_basket</mat-icon> Basket
     </a>
   </nav>
 </mat-toolbar>
