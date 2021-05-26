@@ -1,0 +1,40 @@
+<mat-card *ngIf="products?.length" class="container">
+  <mat-accordion displayMode="default" [multi]="true"
+                 [hideToggle]="false">
+    <mat-expansion-panel
+      *ngFor="let product of products"
+      [hideToggle]="false"
+    >
+      <mat-expansion-panel-header>{{product.name}}</mat-expansion-panel-header>
+        <p>Price: {{product.price | currency}}</p>
+        <p>{{product.label}}</p>
+      <mat-action-row>
+        <button
+          color="warn"
+          mat-raised-button
+          (click)="delete(product.id)"
+        >
+          Remove
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-card-content>
+    <span>Total price: {{totalPrice | currency}}</span>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="clearBasket()"
+    >
+      Clear basket
+    </button>
+  </mat-card-content>
+</mat-card>
+<mat-card
+  *ngIf="!products?.length"
+  class="container"
+>
+  <h1 mat-card-title>
+    Basket is empty
+  </h1>
+</mat-card>
